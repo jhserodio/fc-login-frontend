@@ -15,14 +15,13 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Install dependencies
-        run:
-        npm install |
-        npm install -g surge
+        run: npm install
+      - name: Install Surge
+      - run: npm install -g surge
       - name: Eslint
         run: npm run lint
       - name: Unit Tests
         run: npm run test
       - name: Build
-        run: npm run build
       - run: npm run build
       - run: surge ./dist --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
