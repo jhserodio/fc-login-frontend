@@ -22,12 +22,6 @@ jobs:
         run: npm run test
       - name: Build
         run: npm run build
-
-  deploy:
-    runs-on: ubuntu-latest
-    name: Deploying to surge
-    
-    steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
