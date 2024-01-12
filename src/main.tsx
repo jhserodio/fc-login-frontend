@@ -14,7 +14,7 @@ Sentry.init({
   dsn: 'https://7d15d5b90bd47b59161e91dc5dbd086d@o4506560139296768.ingest.sentry.io/4506560141000704',
   integrations: [
     new Sentry.BrowserTracing({
-      tracePropagationTargets: ['localhost', /^https:\/\/freshcells-jhserodio-test\.surge\.io/],
+      tracePropagationTargets: ['localhost', /^https:\/\/freshcells-jhserodio-challenge\.surge\.io/],
     }),
     new Sentry.Replay({
       maskAllText: false,
