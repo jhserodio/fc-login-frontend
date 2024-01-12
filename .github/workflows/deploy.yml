@@ -22,6 +22,7 @@ jobs:
         run: npm run lint
       - name: Unit Tests
         run: npm run test
-      - name: Build
-      - run: npm run build
-      - run: surge ./dist --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - name: Build App
+        run: npm run build
+      - name: Deploy
+        run: surge ./dist --domain ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
