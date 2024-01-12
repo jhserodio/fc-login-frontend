@@ -1,0 +1,12 @@
+*.css
+*.svg
+*.html
+*.test
+.eslintrc.cjs
+.prettierrc.js
+.editorconfig
+.stylelintrc.js
+docs/
+build/
+dist/
+__test__
