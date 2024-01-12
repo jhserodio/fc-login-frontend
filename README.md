@@ -1,30 +1,30 @@
-# React + TypeScript + Vite
+# FreshCells Frontend Login
+A project with an implementation for testing my skills to work to an Amazing Germany Company <3
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Dependencies
+- React: my favorite Framework (someone says "its a library", No its a framework in my hands)
+- Typescript: sorry but i really like types (Rust <3, Haskell <3)
 
-Currently, two official plugins are available:
+## Dev dependencies
+- Vite: its a dev dependency, I aways used CRA but i will try to use vite this time.
+- Jest: For testing with Testing-library also.
+- Eslint + Prettier + Editor Config: its necessary.
+- Sentry: I put some logs with sentry
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Comands
 ```
+// dev mode with hot module replacement
+$ npm run dev
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+// build a project to deploy
+$ npm run build
+
+// you want see some log locally? use Sentry =D
+$ npm run log
+
+// check code format
+$ npm run lint
+
+// run the unit tests
+$ npm run test
+```

@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "log": "npx @sentry/wizard@latest -i sourcemaps",
     "lint": "eslint ./src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "test": "jest",
     "preview": "vite preview"
