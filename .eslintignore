@@ -10,3 +10,4 @@ docs/
 build/
 dist/
 __test__
+__mocks__
