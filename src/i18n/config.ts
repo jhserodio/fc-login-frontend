@@ -1,5 +1,5 @@
 import en from './locales/en.json';
-import de from './locales/en.json';
+import de from './locales/de.json';
 
 const i18nInitConfig = {
   fallbackLng: 'en',

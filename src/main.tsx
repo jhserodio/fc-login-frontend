@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
-import i18n from 'i18next';
+import i18n, { use } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import App from './App.tsx';
 import './theme.css';
 import i18nInitConfig from './i18n/config.ts';
 
-i18n.use(initReactI18next).init(i18nInitConfig);
+use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
 
 Sentry.init({
