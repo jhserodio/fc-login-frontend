@@ -50,6 +50,12 @@ module.exports = {
       }
     ],
     'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': ['error'] 
+    'prettier/prettier': ['error'],
+    'import/no-unresolved': [
+      'error',
+      {
+        'ignore': [ '\.svg' ]
+      }
+    ]
   },
 }
