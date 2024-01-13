@@ -1,0 +1,20 @@
+/* hint.module.css */
+.hint {
+  padding: 10px;
+}
+
+.error {
+color: var(--error);
+}
+
+.success {
+  color: var(--ok);
+}
+
+.info {
+  color: var(--info);
+}
+
+.default {
+  color: var(--color-text);
+}

@@ -1,7 +1,7 @@
 // src/component/hint/Hint.tsx
 import React from 'react';
 import style from './hint.module.css';
-import { cls } from '../../utils/classes';
+import { cls } from '../../../utils/classes';
 
 type Status = 'error' | 'success' | 'info' | 'default';
 
@@ -11,5 +11,5 @@ export interface HintProps {
 }
 
 export const Hint: React.FC<HintProps> = ({ status, children }) => (
-  <div className={cls([style.hint, style[status]])}>{children}</div>
+  <span className={cls([style.hint, style[status]])}>{children}</span>
 );
