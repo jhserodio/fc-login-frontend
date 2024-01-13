@@ -51,7 +51,15 @@ module.exports = {
       }
     ],
     'react/react-in-jsx-scope': 'off',
-    'prettier/prettier': ['error'],
+    'prettier/prettier': ['error', {
+      "trailingComma": "all",
+      "tabWidth": 2,
+      "semi": true,
+      "singleQuote": true,
+      "printWidth": 100,
+      "bracketSpacing": true,
+      "endOfLine": "lf"
+  }],
     'import/no-unresolved': [
       'error',
       {
