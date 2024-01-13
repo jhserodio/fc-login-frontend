@@ -1,4 +1,4 @@
-import { Icon } from '../../components/icons/icon/Icon';
+import { Icon } from '../../components/icons';
 
 const Login = () => (
   <div>
