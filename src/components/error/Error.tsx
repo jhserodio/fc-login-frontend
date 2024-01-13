@@ -13,7 +13,10 @@ interface Props {
 class ErrorBoundary extends Component<Props> {
   render() {
     return (
-      <Sentry.ErrorBoundary fallback={<FallbackComponent message={this.props.message} />} showDialog>
+      <Sentry.ErrorBoundary
+        fallback={<FallbackComponent message={this.props.message} />}
+        showDialog
+      >
         {this.props.children}
       </Sentry.ErrorBoundary>
     );

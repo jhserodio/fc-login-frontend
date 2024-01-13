@@ -23,10 +23,13 @@ use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
 
 Sentry.init({
-  dsn: 'https://7d15d5b90bd47b59161e91dc5dbd086d@o4506560139296768.ingest.sentry.io/4506560141000704',
+  dsn: import.meta.env.SENTRY_DSN,
   integrations: [
     new Sentry.BrowserTracing({
-      tracePropagationTargets: ['localhost', /^https:\/\/freshcells-jhserodio-challenge\.surge\.sh/],
+      tracePropagationTargets: [
+        'localhost',
+        /^https:\/\/freshcells-jhserodio-challenge\.surge\.sh/,
+      ],
       routingInstrumentation: Sentry.reactRouterV6Instrumentation(
         React.useEffect,
         useLocation,

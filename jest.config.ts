@@ -6,6 +6,6 @@ export default {
   },
   moduleNameMapper: {
     '\\.(gif|ttf|eot|svg|png)$': '<rootDir>/config/__mocks__/fileMock.js',
-    '^.+\\.(css|less)$': '<rootDir>/config/__mocks__/cssMock.js',
+    '^.+\\.(css|less)$': 'identity-obj-proxy',
   },
 };

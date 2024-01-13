@@ -27,10 +27,10 @@
 	--black-600: rgba(0,0,0, 60%);
 
   /* text colors */
-  --color-title: var(--grey-1);
-  --color-subtitle: var(--grey-2);
-  --color-text: var(--grey-3);
-  --color-caption: var(--grey-4);
+  --color-title: var(--black-200);
+  --color-subtitle: var(--black-400);
+  --color-text: var(--black-600);
+  --color-caption: var(--black-600);
 
   /* user colors */
   --info: #3a64f6;
