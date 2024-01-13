@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import i18n, { use } from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import App from './App.tsx';
-import './theme.css';
 import i18nInitConfig from './i18n/config.ts';
+import { RouterProvider } from 'react-router-dom';
+import { route } from './routes.tsx';
+
+import './theme.css';
 
 use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
@@ -28,6 +30,6 @@ Sentry.init({
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={route} />
   </React.StrictMode>,
 );
