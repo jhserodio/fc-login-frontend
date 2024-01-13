@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import { Component, ReactNode } from 'react';
 import * as Sentry from '@sentry/react';
 
 function FallbackComponent({ message }: { message: string }) {
@@ -10,7 +10,7 @@ interface Props {
   message: string;
 }
 
-class ErrorBoundary extends React.Component<Props> {
+class ErrorBoundary extends Component<Props> {
   render() {
     return (
       <Sentry.ErrorBoundary fallback={<FallbackComponent message={this.props.message} />} showDialog>
