@@ -1,9 +1,9 @@
-import { Input } from '../../components/forms/input/Input';
+import { Field } from '../../components/forms/field/field';
 
 const Login = () => (
   <div>
     Login Page
-    <Input label="any" onChange={() => {}} value="value" />
+    <Field label="any" onChange={() => {}} value="value" />
   </div>
 );
 

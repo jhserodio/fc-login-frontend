@@ -1,5 +1,5 @@
 import { useState, ChangeEvent, useCallback } from 'react';
-import { Field } from '../field-box/Field';
+import { InputBox } from '../input-box/InputBox';
 
 import style from './password.module.css';
 import { cls } from '../../../utils/classes';
@@ -23,7 +23,7 @@ export const Password = ({ value, onChange, label, error }: Props) => {
   }, [type]);
 
   return (
-    <Field label={label} error={error}>
+    <InputBox label={label} error={error}>
       <input
         data-testid="input"
         type={type}
@@ -39,6 +39,6 @@ export const Password = ({ value, onChange, label, error }: Props) => {
       >
         {type === 'password' ? 'show' : 'hide'}
       </button>
-    </Field>
+    </InputBox>
   );
 };

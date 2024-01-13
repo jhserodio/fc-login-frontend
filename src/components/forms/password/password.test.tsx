@@ -8,8 +8,8 @@ jest.mock('../../../utils/classes', () => ({
   cls: jest.fn().mockReturnValue('mocked_className'),
 }));
 
-jest.mock('../field-box/Field', () => ({
-  Field: ({ children }: { children: ReactNode }) => <div>{children}</div>,
+jest.mock('../input-box/InputBox', () => ({
+  InputBox: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 
 describe('Password', () => {

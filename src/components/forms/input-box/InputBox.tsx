@@ -1,7 +1,7 @@
 import style from './field.module.css';
 import { Hint } from '../../hint/Hint';
 
-export const Field = ({
+export const InputBox = ({
   error,
   label,
   children,

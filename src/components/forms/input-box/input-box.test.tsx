@@ -1,17 +1,17 @@
 import { ReactNode } from 'react';
 import { render, screen } from '@testing-library/react';
-import { Field } from './Field';
+import { InputBox } from './InputBox';
 
 jest.mock('../../hint/Hint', () => ({
   Hint: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 
-describe('Field', () => {
+describe('InputBox', () => {
   it('renders without error', () => {
     render(
-      <Field label="Test Label">
+      <InputBox label="Test Label">
         <div>Test Child</div>
-      </Field>,
+      </InputBox>,
     );
     expect(screen.getByText('Test Label')).toBeDefined();
     expect(screen.getByText('Test Child')).toBeDefined();
@@ -19,9 +19,9 @@ describe('Field', () => {
 
   it('renders with error', () => {
     render(
-      <Field label="Test Label" error="Test Error">
+      <InputBox label="Test Label" error="Test Error">
         <div>Test Child</div>
-      </Field>,
+      </InputBox>,
     );
     expect(screen.getByText('Test Label')).toBeDefined();
     expect(screen.getByText('Test Child')).toBeDefined();

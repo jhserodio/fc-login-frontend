@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from 'react';
-import { Field } from '../field-box/Field';
+import { InputBox } from '../input-box/InputBox';
 
 import style from './input.module.css';
 import { cls } from '../../../utils/classes';
@@ -12,9 +12,9 @@ interface Props {
   error?: string;
 }
 
-export const Input: React.FC<Props> = ({ value, onChange, label, error, type }) => {
+export const Field: React.FC<Props> = ({ value, onChange, label, error, type }) => {
   return (
-    <Field label={label} error={error}>
+    <InputBox label={label} error={error}>
       <input
         data-testid="input"
         type={type ?? 'text'}
@@ -22,6 +22,6 @@ export const Input: React.FC<Props> = ({ value, onChange, label, error, type }) 
         onChange={onChange}
         className={cls([style.input, error && style.__error])}
       />
-    </Field>
+    </InputBox>
   );
 };
