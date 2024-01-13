@@ -1,5 +1,28 @@
 {
+    "title": "Fresh Cells",
     "login": {
-        "email": "E-mail"
+        "title": "Login",
+        "subtitle": "Please enter your credentials",
+        "form": {
+            "email": "Email",
+            "password": "Password",
+            "submit": "Login",
+            "view": "View",
+            "hide": "Hide"
+        },
+        "validate": {
+            "require": "This field is required",
+            "email": "Please enter a valid email address"
+        }
+    },
+    "user": {
+        "title": "User Details",
+        "subtitle": "Hi {firstName} here are your account details",
+        "list": {
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "id": "Id",
+            "email": "Email"
+        }
     }
 }

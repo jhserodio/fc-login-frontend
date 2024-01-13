@@ -1,5 +1,28 @@
 {
+    "title": "Fresh Cells",
     "login": {
-        "email": "Email"
+        "title": "Anmeldung",
+        "subtitle": "Bitte geben Sie Ihre Anmeldedaten ein",
+        "form": {
+            "email": "E-Mail",
+            "password": "Passwort",
+            "submit": "Anmelden",
+            "view": "Anzeigen",
+            "hide": "Ausblenden"
+        },
+        "validate": {
+            "require": "Dieses Feld ist erforderlich",
+            "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+        }
+    },
+    "user": {
+        "title": "Benutzerdetails",
+        "subtitle": "Hallo {firstName}, hier sind Ihre Kontodetails",
+        "list": {
+            "firstName": "Vorname",
+            "lastName": "Nachname",
+            "id": "ID",
+            "email": "E-Mail"
+        }
     }
 }

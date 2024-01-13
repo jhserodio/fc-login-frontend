@@ -54,7 +54,6 @@ const sentryCreateBrowserRouter = Sentry.wrapCreateBrowserRouter(createBrowserRo
 export const route = sentryCreateBrowserRouter([
   {
     path: '/',
-    errorElement: <ErrorBoundary message="login page not working" />,
     element: (
       <Suspense fallback={<>loading</>}>
         <Login />
@@ -63,7 +62,6 @@ export const route = sentryCreateBrowserRouter([
   },
   {
     path: '/user/:userId',
-    errorElement: <ErrorBoundary message="user page not working" />,
     element: (
       <Suspense fallback={<>loading</>}>
         <User />
@@ -74,6 +72,8 @@ export const route = sentryCreateBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={route} />
+    <ErrorBoundary message="Something not working">
+      <RouterProvider router={route} />
+    </ErrorBoundary>
   </React.StrictMode>,
 );
