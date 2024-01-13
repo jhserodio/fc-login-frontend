@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { InputBox } from '../input-box/InputBox';
 
-import style from './input.module.css';
+import style from './field.module.css';
 import { cls } from '../../../utils/classes';
 
 interface Props {
