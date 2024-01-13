@@ -1,2 +1,3 @@
-import User from './User';
-export default User;
+import React from 'react';
+
+export const User = React.lazy(() => import('./User'));

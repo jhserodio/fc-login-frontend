@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@sentry/integrations": "^7.93.0",
     "@sentry/react": "^7.93.0",
     "i18next": "^23.7.16",
     "jest-environment-jsdom": "^29.7.0",

@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
+import { HttpClient } from '@sentry/integrations';
 import i18n, { use } from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import i18nInitConfig from './i18n/config.ts';
@@ -15,9 +16,8 @@ import {
 
 import './theme.css';
 import ErrorBoundary from './components/error/Error.tsx';
-
-const Login = React.lazy(() => import('./pages/login'));
-const User = React.lazy(() => import('./pages/user'));
+import Login from './pages/login/Login.tsx';
+import User from './pages/user/User.tsx';
 
 use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
@@ -39,6 +39,7 @@ Sentry.init({
       maskAllText: false,
       blockAllMedia: false,
     }),
+    new HttpClient(),
   ],
   tracesSampleRate: 1.0,
   replaysSessionSampleRate: 0.1,
