@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { render, screen } from '@testing-library/react';
 import { InputBox } from './InputBox';
 
-jest.mock('../../hint/Hint', () => ({
+jest.mock('../../texts/hint/Hint', () => ({
   Hint: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 

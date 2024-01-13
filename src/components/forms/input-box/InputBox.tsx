@@ -1,5 +1,5 @@
-import style from './field.module.css';
-import { Hint } from '../../hint/Hint';
+import style from './input-box.module.css';
+import { Hint } from '../../texts/hint/Hint';
 
 export const InputBox = ({
   error,

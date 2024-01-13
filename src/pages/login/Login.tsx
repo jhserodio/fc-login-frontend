@@ -1,9 +1,9 @@
-import { Field } from '../../components/forms/field/field';
+import { Icon } from '../../components/icons/icon/Icon';
 
 const Login = () => (
   <div>
     Login Page
-    <Field label="any" onChange={() => {}} value="value" />
+    <Icon name="bug" />
   </div>
 );
 

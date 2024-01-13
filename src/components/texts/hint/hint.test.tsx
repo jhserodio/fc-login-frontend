@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { Hint, HintProps } from './Hint';
-import * as classes from '../../utils/classes';
+import * as classes from '../../../utils/classes';
 
 describe('Hint', () => {
   const defaultProps: HintProps = {
