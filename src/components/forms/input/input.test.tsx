@@ -15,6 +15,16 @@ describe('Input', () => {
     expect(wrap.getByTestId('input').getAttribute('type')).toBe('text');
   });
 
+  it('should render correctly with custom type', () => {
+    const onChange = jest.fn();
+    const wrap = render(
+      <Input type="number" label="Test Label" value="Test Value" onChange={onChange} />,
+    );
+
+    expect(wrap.getByTestId('input')).toBeDefined();
+    expect(wrap.getByTestId('input').getAttribute('type')).toBe('number');
+  });
+
   it('should render correctly with error', () => {
     const onChange = jest.fn();
     const wrap = render(

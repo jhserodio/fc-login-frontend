@@ -8,16 +8,16 @@ interface Props {
   label: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  inputType?: 'text' | 'password';
+  type?: 'text' | 'number';
   error?: string;
 }
 
-export const Input: React.FC<Props> = ({ value, onChange, label, error }) => {
+export const Input: React.FC<Props> = ({ value, onChange, label, error, type }) => {
   return (
     <Field label={label} error={error}>
       <input
         data-testid="input"
-        type="text"
+        type={type ?? 'text'}
         value={value}
         onChange={onChange}
         className={cls([style.input, error && style.__error])}

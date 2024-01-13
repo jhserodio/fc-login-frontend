@@ -11,14 +11,16 @@ describe('Hint', () => {
   const clsSpy = jest.fn();
   jest.spyOn(classes, 'cls').mockImplementation(clsSpy);
 
+  beforeEach(() => {
+    clsSpy.mockReset();
+  });
+
   it('should be rendered', () => {
     const { getByText } = render(<Hint {...defaultProps} />);
     expect(getByText('Test')).toBeDefined();
   });
 
   it('should call cls with an array with two elements', () => {
-    clsSpy.mockReset();
-
     render(<Hint {...defaultProps} />);
 
     expect(clsSpy).toHaveBeenCalledTimes(1);
