@@ -2,11 +2,6 @@ import { render } from '@testing-library/react';
 import { Hint, HintProps } from './Hint';
 import * as classes from '../../utils/classes';
 
-jest.mock('./hint.module.css', () => ({
-  hint: 'hint',
-  default: 'default',
-}));
-
 describe('Hint', () => {
   const defaultProps: HintProps = {
     status: 'default',
