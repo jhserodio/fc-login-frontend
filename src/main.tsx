@@ -18,12 +18,13 @@ import './theme.css';
 import ErrorBoundary from './components/error/Error.tsx';
 import Login from './pages/login/Login.tsx';
 import User from './pages/user/User.tsx';
+import { sentry_host } from './service/hosts.ts';
 
 use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
 
 Sentry.init({
-  dsn: import.meta.env.SENTRY_DSN,
+  dsn: sentry_host,
   integrations: [
     new Sentry.BrowserTracing({
       tracePropagationTargets: [
