@@ -2,12 +2,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { Btn } from './Btn';
 
 describe('Btn', () => {
-  it('renders without crashing', () => {
-    const { getByText } = render(<Btn onClick={() => {}}>Click me</Btn>);
-    expect(getByText('Click me')).toBeDefined();
-  });
-
-  it('renders the children correctly', () => {
+  it('should render', () => {
     const { getByText } = render(<Btn onClick={() => {}}>Click me</Btn>);
     expect(getByText('Click me')).toBeDefined();
   });

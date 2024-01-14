@@ -1,6 +1,30 @@
-.btnIcon {}
+.btn {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--input-height) + var(--space));
+  border: 2px solid var(--primary-lightest);
+  box-sizing: content-box;
+  background: var(--white-600);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
 
-.load {}
+.btn:hover, .btn:focus {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--primary-dark);
+}
+
+.load {
+  transform: scale(0.8);
+}
 
 .load > svg {
   animation: spin 2s linear infinite;

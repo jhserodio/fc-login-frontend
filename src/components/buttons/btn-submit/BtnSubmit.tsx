@@ -9,12 +9,12 @@ type BtnProps = {
 
 export const BtnSubmit: React.FC<BtnProps> = ({ children, loading }) => {
   return (
-    <button className={styles.btnIcon} type="submit">
+    <button className={styles.btn} type="submit">
       {!loading ? (
         children
       ) : (
         <span className={styles.load}>
-          <Icon name="spining" />
+          <Icon name="spining" fill="var(--primary)" />
         </span>
       )}
     </button>
