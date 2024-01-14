@@ -4,7 +4,7 @@ import { t } from 'i18next';
 import { BtnSubmit } from '../../components/buttons/btn-submit/BtnSubmit';
 import { Container } from '../../components/container/Container';
 import { Form, Password } from '../../components/forms';
-import { Field } from '../../components/forms/field/field';
+import { Field } from '../../components/forms/field/Field';
 import { LOGIN_MUTATION } from '../../service/gql/login.mutation';
 import { LoginResponse } from '../../service/interfaces/login.model';
 import { useMutation } from '../../service/useMutation';

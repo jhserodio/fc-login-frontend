@@ -1,26 +1,22 @@
-import React, { ChangeEvent } from 'react';
+import React from 'react';
 import { InputBox } from '../input-box/InputBox';
 
 import style from './field.module.css';
 import { cls } from '../../../utils/classes';
+import { InputProps } from '../input.model';
 
-interface Props {
-  label: string;
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+interface Props extends InputProps {
   type?: 'text' | 'number' | 'email';
-  error?: string;
 }
 
-export const Field: React.FC<Props> = ({ value, onChange, label, error, type }) => {
+export const Field: React.FC<Props> = ({ type, label, error, ...inputProps }: Props) => {
   return (
     <InputBox label={label} error={error}>
       <input
         data-testid="input"
         type={type ?? 'text'}
-        value={value}
-        onChange={onChange}
         className={cls([style.input, error && style.__error])}
+        {...inputProps}
       />
     </InputBox>
   );

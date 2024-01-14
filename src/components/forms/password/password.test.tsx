@@ -20,10 +20,6 @@ jest.mock('../../buttons/btn-icon/BtnIcon', () => ({
   ),
 }));
 
-jest.mock('../../icons/Icon', () => ({
-  Icon: (name: string) => <div>{name}</div>,
-}));
-
 describe('Password', () => {
   const mockOnChange = jest.fn();
 
@@ -36,18 +32,34 @@ describe('Password', () => {
   });
 
   it('should render without error', () => {
-    const { getByTestId } = render(<Password label="Password" value="" onChange={mockOnChange} />);
+    const { getByTestId } = render(
+      <Password name="passwd" label="Password" value="" onChange={mockOnChange} />,
+    );
     expect(getByTestId('input')).toBeDefined();
   });
 
   it('should call onChange when password value changes', () => {
-    const { getByTestId } = render(<Password label="Password" value="" onChange={mockOnChange} />);
+    const { getByTestId } = render(
+      <Password name="passwd" label="Password" value="" onChange={mockOnChange} />,
+    );
     fireEvent.change(getByTestId('input'), { target: { value: 'new value' } });
     expect(mockOnChange).toHaveBeenCalled();
   });
 
+  it('should call onBlur when input loses focus', () => {
+    const mockOnBlur = jest.fn();
+
+    const { getByTestId } = render(
+      <Password name="passwd" label="Password" value="" onBlur={mockOnBlur} onChange={jest.fn()} />,
+    );
+    fireEvent.blur(getByTestId('input'));
+    expect(mockOnBlur).toHaveBeenCalled();
+  });
+
   it('should toggle password type when toggle button is clicked', () => {
-    const { getByTestId } = render(<Password label="Password" value="" onChange={mockOnChange} />);
+    const { getByTestId } = render(
+      <Password name="passwd" label="Password" value="" onChange={mockOnChange} />,
+    );
     const toggleButton = getByTestId('toggle');
     const password = getByTestId('input');
     expect(password.getAttribute('type')).toBe('password');
@@ -58,7 +70,15 @@ describe('Password', () => {
   });
 
   it('should apply error style when error prop is provided', () => {
-    render(<Password label="Password" value="" onChange={mockOnChange} error="Error message" />);
+    render(
+      <Password
+        name="passwd"
+        label="Password"
+        value=""
+        onChange={mockOnChange}
+        error="Error message"
+      />,
+    );
     expect(clsSpy.mock.lastCall[0].length).toBe(2);
   });
 });
