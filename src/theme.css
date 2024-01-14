@@ -154,6 +154,12 @@
 	--shine: radial-gradient(500px 200px at 50% 0%, var(--primary-dark) 20%,var(--primary-darkest) 100%);
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
 /* GLOBAL RESET CLASSES */
 a._reset {
   color: var(--text);

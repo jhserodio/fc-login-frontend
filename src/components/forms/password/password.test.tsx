@@ -12,6 +12,18 @@ jest.mock('../input-box/InputBox', () => ({
   InputBox: ({ children }: { children: ReactNode }) => <div>{children}</div>,
 }));
 
+jest.mock('../../buttons/btn-icon/BtnIcon', () => ({
+  BtnIcon: ({ children, onClick }: { children: ReactNode; onClick: VoidFunction }) => (
+    <button data-testid="toggle" onClick={onClick}>
+      {children}
+    </button>
+  ),
+}));
+
+jest.mock('../../icons/Icon', () => ({
+  Icon: (name: string) => <div>{name}</div>,
+}));
+
 describe('Password', () => {
   const mockOnChange = jest.fn();
 

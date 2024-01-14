@@ -6,13 +6,7 @@
         "form": {
             "email": "Email",
             "password": "Password",
-            "submit": "Login",
-            "view": "View",
-            "hide": "Hide"
-        },
-        "validate": {
-            "require": "This field is required",
-            "email": "Please enter a valid email address"
+            "submit": "Login"
         }
     },
     "user": {
@@ -24,5 +18,9 @@
             "id": "Id",
             "email": "Email"
         }
+    },
+    "validate": {
+        "require": "This field is required",
+        "email": "Please enter a valid email address"
     }
 }

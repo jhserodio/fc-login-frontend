@@ -8,7 +8,7 @@ interface Props {
   label: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  type?: 'text' | 'number';
+  type?: 'text' | 'number' | 'email';
   error?: string;
 }
 

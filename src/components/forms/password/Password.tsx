@@ -3,6 +3,8 @@ import { InputBox } from '../input-box/InputBox';
 
 import style from './password.module.css';
 import { cls } from '../../../utils/classes';
+import { BtnIcon } from '../../buttons';
+import { Icon } from '../../icons';
 
 interface Props {
   label: string;
@@ -22,6 +24,8 @@ export const Password = ({ value, onChange, label, error }: Props) => {
     }
   }, [type]);
 
+  const eye = type === 'password' ? <Icon name="show" /> : <Icon name="hide" />;
+
   return (
     <InputBox label={label} error={error}>
       <input
@@ -31,14 +35,7 @@ export const Password = ({ value, onChange, label, error }: Props) => {
         onChange={onChange}
         className={cls([style.input, error && style.__error])}
       />
-      <button
-        data-testid="toggle"
-        type="button"
-        className={style.toggle}
-        onClick={handleChangeType}
-      >
-        {type === 'password' ? 'show' : 'hide'}
-      </button>
+      <BtnIcon onClick={handleChangeType}>{eye}</BtnIcon>
     </InputBox>
   );
 };

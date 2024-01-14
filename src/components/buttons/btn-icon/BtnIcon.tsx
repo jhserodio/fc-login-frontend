@@ -9,7 +9,7 @@ type BtnProps = {
 
 export const BtnIcon: React.FC<BtnProps> = ({ children, onClick }) => {
   return (
-    <button className={styles.btn} onClick={onClick} data-testid="btn-icon">
+    <button className={styles.btn} onClick={onClick} data-testid="btn-icon" type="button">
       {children}
     </button>
   );
