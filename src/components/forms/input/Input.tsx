@@ -9,15 +9,17 @@ interface Props extends InputProps {
   children?: React.ReactNode;
 }
 
-export const Input = ({ label, error, children: append, ...inputProps }: Props) => {
+export const Input = ({ label, error, children, ...inputProps }: Props) => {
   return (
     <InputBox label={label} error={error}>
-      <input
-        data-testid="input"
-        className={cls([style.input, error && style.__error])}
-        {...inputProps}
-      />
-      {append}
+      <div className={style.wrap}>
+        <input
+          data-testid="input"
+          className={cls([style.input, error && style.__error, children && style.__withChildren])}
+          {...inputProps}
+        />
+        {children}
+      </div>
     </InputBox>
   );
 };

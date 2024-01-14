@@ -15,10 +15,16 @@ export const Password = (inputProps: InputProps) => {
     }
   }, [type]);
 
+  const iconFill = inputProps.error ? `var(--error)` : 'var(--primary-light)';
+
   return (
     <Input {...inputProps} type={type}>
-      <BtnIcon onClick={handleChangeType}>
-        {type === 'password' ? <Icon name="show" /> : <Icon name="hide" />}
+      <BtnIcon onClick={handleChangeType} status={inputProps.error ? 'error' : 'default'}>
+        {type === 'password' ? (
+          <Icon name="show" fill={iconFill} />
+        ) : (
+          <Icon name="hide" fill={iconFill} />
+        )}
       </BtnIcon>
     </Input>
   );

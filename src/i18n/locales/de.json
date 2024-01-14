@@ -20,7 +20,7 @@
         }
     },
     "validate": {
-        "require": "Dieses Feld ist erforderlich",
+        "required": "Dieses Feld ist erforderlich",
         "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
     }
 }

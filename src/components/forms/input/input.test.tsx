@@ -1,12 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import { Input } from './Input';
-import * as classes from '../../../utils/classes';
 import { ReactNode } from 'react';
-
-// Mock da função cls
-jest.mock('../../../utils/classes', () => ({
-  cls: jest.fn().mockReturnValue('mocked_className'),
-}));
+import * as classes from '../../../utils/classes';
 
 jest.mock('../input-box/InputBox', () => ({
   InputBox: ({ children }: { children: ReactNode }) => <div>{children}</div>,
@@ -74,6 +69,15 @@ describe('Input', () => {
         error="Error message"
       />,
     );
-    expect(clsSpy.mock.lastCall[0].length).toBe(2);
+    expect(clsSpy).toHaveBeenCalledWith(['input', '__error', undefined]);
+  });
+
+  it('should apply error style when children prop is provided', () => {
+    render(
+      <Input type="text" name="default" label="Input" value="" onChange={mockOnChange}>
+        {<span />}
+      </Input>,
+    );
+    expect(clsSpy).toHaveBeenCalledWith(['input', undefined, '__withChildren']);
   });
 });

@@ -5,8 +5,8 @@ interface Props extends Omit<SvgProps, 'className' | 'children'> {
   name: Path;
 }
 
-export const Icon = (props: Props) => (
+export const Icon = ({ fill, ...props }: Props) => (
   <Svg {...props}>
-    <path d={paths[props.name]} />
+    <path d={paths[props.name]} fill={fill} />
   </Svg>
 );

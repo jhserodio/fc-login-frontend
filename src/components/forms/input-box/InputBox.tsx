@@ -1,5 +1,6 @@
 import style from './input-box.module.css';
 import { Hint } from '../../texts/hint/Hint';
+import { cls } from '../../../utils/classes';
 
 export const InputBox = ({
   error,
@@ -10,8 +11,10 @@ export const InputBox = ({
   label: string;
   children: React.ReactNode;
 }) => (
-  <div className={`${style.field} ${error && style.__error}`}>
-    <label className={style.label}>{label}</label>
+  <div className={cls([style.inputBox, error && style.__error])}>
+    <label data-testid="label" className={style.label}>
+      {label}:
+    </label>
     {children}
     {error ? <Hint status="error">{error}</Hint> : ''}
   </div>

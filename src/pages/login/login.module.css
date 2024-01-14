@@ -1,5 +1,14 @@
-.login {}
+.login {
+  margin-top: 160px;
+}
 
-.head {}
+.head {
+  max-width: 80%;
+  margin: 0 auto calc(var(--space-lg) * 2);
+  text-align: center;
+  opacity: 0.6;
+}
 
-.content {}
+.content {
+  padding: var(--space-lg);
+}

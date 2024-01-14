@@ -41,17 +41,21 @@ const LoginComponent = () => {
   return (
     <Background>
       <main className={style.login}>
-        <header className={style.head}>
+        <div>
+          <Title level="h2" captalize>
+            {t('title')}
+          </Title>
           <Title level="h2">{t('login.title')}</Title>
-        </header>
+        </div>
         <div className={style.content}>
           <Container>
-            <span>
+            <div className={style.head}>
               <Title level="h3">{t('login.subtitle')}</Title>
-            </span>
-            <div className={style.container}>
+            </div>
+            <div className={style.content}>
               <Form submit={handleLogin}>
                 <Field
+                  name="email"
                   label={t('login.form.email')}
                   value={email}
                   onChange={handleEmail}
@@ -59,6 +63,7 @@ const LoginComponent = () => {
                   type="email"
                 />
                 <Password
+                  name="password"
                   label={t('login.form.password')}
                   value={pass}
                   onChange={handlePass}

@@ -13,4 +13,14 @@ describe('Title', () => {
     render(<Title level="h2">Teste</Title>);
     expect(screen.getByText('Teste')).toBeDefined();
   });
+
+  it('renders with captalize', () => {
+    render(
+      <Title level="h1" captalize>
+        Teste
+      </Title>,
+    );
+    const titleElement = screen.getByText('Teste');
+    expect(titleElement.getAttribute('class')).toBe('title __captalize');
+  });
 });
