@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { gqlFetch } from './gql-fetch';
+import { gqlFetch } from '../service/gql-fetch';
 
 export const useQuery = <T>(
   query: string,

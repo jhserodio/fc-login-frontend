@@ -12,3 +12,7 @@
 .content {
   padding: var(--space-lg);
 }
+
+.btn {
+  margin-top: calc(var(--space-lg)*2);
+}

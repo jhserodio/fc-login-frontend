@@ -6,7 +6,7 @@ import { cls } from '../../../utils/classes';
 type BtnProps = {
   children: React.ReactElement<typeof Icon>;
   onClick: () => void;
-  status?: 'error' | 'ok' | 'warn' | 'info' | 'default';
+  status?: 'error' | 'ok' | 'warn' | 'info' | 'default' | 'reset';
 };
 
 export const BtnIcon: React.FC<BtnProps> = ({ children, onClick, status }) => {

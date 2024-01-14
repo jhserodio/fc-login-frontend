@@ -21,6 +21,7 @@
     },
     "validate": {
         "required": "This field is required",
-        "email": "Please enter a valid email address"
+        "email": "Please enter a valid email address",
+        "invalidSubimit": "Please correct the errors before submitting the form"
     }
 }

@@ -25,6 +25,7 @@
 	--black-200: rgba(0,0,0, 20%);
 	--black-400: rgba(0,0,0, 40%);
 	--black-600: rgba(0,0,0, 60%);
+	--black-800: rgba(0,0,0, 80%);
 
   /* text colors */
   --color-title: var(--black-200);

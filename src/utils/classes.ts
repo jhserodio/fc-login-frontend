@@ -5,8 +5,6 @@ const isClass = (str: Optional<string>): boolean => {
     return false;
   }
 
-  console.log('passou aqui', str);
-
   return /^[-_a-zA-Z0-9]+$/.test(str);
 };
 

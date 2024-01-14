@@ -8,7 +8,7 @@
 .label {
   color: var(--white-800);
   font-size: var(--body);
-  font-weight: var(--weight-bold);
+  font-weight: var(--weight-medium);
   margin: var(--space-sm) 0;
 }
 

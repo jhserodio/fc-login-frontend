@@ -1,6 +1,6 @@
 import { renderHook, act, waitFor } from '@testing-library/react';
 import { useMutation } from './useMutation';
-import * as fetch from './gql-fetch';
+import * as fetch from '../service/gql-fetch';
 
 describe('useMutation', () => {
   const gqlFetch: jest.SpyInstance = jest.spyOn(fetch, 'gqlFetch');
@@ -18,7 +18,7 @@ describe('useMutation', () => {
     });
 
     await waitFor(() => {
-      expect(result.current.data).toEqual({ test: 'test data' });
+      expect(result.current.resp).toEqual({ test: 'test data' });
       expect(result.current.error).toBe(null);
     });
   });

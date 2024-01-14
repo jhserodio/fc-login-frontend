@@ -1,42 +1,51 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { t } from 'i18next';
 
-import { BtnSubmit } from '../../components/buttons/btn-submit/BtnSubmit';
-import { Container } from '../../components/container/Container';
-import { Form, Password } from '../../components/forms';
-import { Field } from '../../components/forms/field/Field';
+import { BtnSubmit } from '../../components/buttons';
+import { Container } from '../../components/container';
+import { Form, Field, Password } from '../../components/forms';
 import { LOGIN_MUTATION } from '../../service/gql/login.mutation';
 import { LoginResponse } from '../../service/interfaces/login.model';
-import { useMutation } from '../../service/useMutation';
+import { useMutation } from '../../hooks/useMutation';
 import style from './login.module.css';
-import ErrorBoundary from '../../components/error/Error';
 import { isEmail, isRequired } from '../../utils/validate';
 import { Title } from '../../components/texts';
-import { Background } from '../../components/background/Background';
+import { Background } from '../../components/background';
+import { Snackbar } from '../../components/snackbar';
+import useForm from '../../hooks/useForm';
+import { SnackbarStatus } from '../../components/snackbar/Snackbar';
 
 const LoginComponent = () => {
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
-  const { data, error, loading, mutate } = useMutation<LoginResponse>(LOGIN_MUTATION);
+  const email = useForm('email', true, [isEmail, isRequired]);
+  const pass = useForm('pass', false, [isRequired]);
+  const [snackbar, setSnackbar] = useState<{ message: string; status: SnackbarStatus }>({
+    message: '',
+    status: 'closed',
+  });
 
-  const handleLogin = async () => {
-    await mutate({
-      identifier: 'test@freshcells.de',
-      password: 'KTKwXm2grV4wHzW',
-    });
+  const { resp, error, loading, mutate } = useMutation<LoginResponse>(LOGIN_MUTATION);
 
-    console.log(data);
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    email.validate.check();
+    pass.validate.check();
+
+    if (email.validate.error || pass.validate.error) {
+      setSnackbar({ message: t('validate.invalidSubimit'), status: 'error' });
+    } else {
+      console.log('email', email.input.value);
+      await mutate({
+        identifier: email.input.value,
+        password: pass.input.value,
+      });
+
+      if (error) {
+        setSnackbar({ message: error.message, status: 'error' });
+      } else {
+        setSnackbar({ message: resp?.data.login.user.id ?? '', status: 'ok' });
+      }
+    }
   };
-
-  const handleEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePass = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPass(e.target.value);
-  };
-
-  if (error) return <ErrorBoundary message="Login Page has a error" />;
 
   return (
     <Background>
@@ -53,27 +62,26 @@ const LoginComponent = () => {
               <Title level="h3">{t('login.subtitle')}</Title>
             </div>
             <div className={style.content}>
-              <Form submit={handleLogin}>
+              <Form submit={handleSubmit}>
                 <Field
-                  name="email"
                   label={t('login.form.email')}
-                  value={email}
-                  onChange={handleEmail}
-                  error={isEmail(email)}
                   type="email"
+                  {...email.input}
+                  error={email.validate.error}
                 />
                 <Password
-                  name="password"
                   label={t('login.form.password')}
-                  value={pass}
-                  onChange={handlePass}
-                  error={isRequired(pass)}
+                  {...pass.input}
+                  error={pass.validate.error}
                 />
-                <BtnSubmit loading={loading}>{t('login.form.submit')}</BtnSubmit>
+                <div className={style.btn}>
+                  <BtnSubmit loading={loading}>{t('login.form.submit')}</BtnSubmit>
+                </div>
               </Form>
             </div>
           </Container>
         </div>
+        <Snackbar {...snackbar} />
       </main>
     </Background>
   );

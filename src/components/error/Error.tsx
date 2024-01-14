@@ -10,7 +10,7 @@ interface Props {
   message: string;
 }
 
-class ErrorBoundary extends Component<Props> {
+export class ErrorBoundary extends Component<Props> {
   render() {
     return (
       <Sentry.ErrorBoundary
@@ -22,5 +22,3 @@ class ErrorBoundary extends Component<Props> {
     );
   }
 }
-
-export default ErrorBoundary;

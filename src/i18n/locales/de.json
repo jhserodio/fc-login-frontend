@@ -21,6 +21,7 @@
     },
     "validate": {
         "required": "Dieses Feld ist erforderlich",
-        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "invalidSubimit": "Bitte überprüfen Sie Ihre Eingabe"
     }
 }

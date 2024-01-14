@@ -15,7 +15,7 @@ import {
 } from 'react-router-dom';
 
 import './theme.css';
-import ErrorBoundary from './components/error/Error.tsx';
+import { ErrorBoundary } from './components/error/Error.tsx';
 import Login from './pages/login/Login.tsx';
 import User from './pages/user/User.tsx';
 import { sentry_host } from './service/hosts.ts';

@@ -4,15 +4,15 @@ import style from './snackbar.module.css';
 import { BtnIcon } from '../buttons';
 import { Icon } from '../icons';
 
-type SnackbarStatus = 'warn' | 'error' | 'info' | 'ok' | 'closed';
+export type SnackbarStatus = 'warn' | 'error' | 'info' | 'ok' | 'closed';
 
-export interface SnackbarProps {
+interface SnackbarProps {
   status: SnackbarStatus;
-  message: string;
+  message?: string;
 }
 
-const Snackbar: FC<SnackbarProps> = ({ status, message }) => {
-  const [innerStatus, setInnerStatus] = useState<SnackbarStatus>('closed');
+export const Snackbar: FC<SnackbarProps> = ({ status, message }) => {
+  const [innerStatus, setInnerStatus] = useState<SnackbarStatus>(status);
 
   const handleClose = () => setInnerStatus('closed');
 
@@ -28,11 +28,9 @@ const Snackbar: FC<SnackbarProps> = ({ status, message }) => {
   return (
     <div data-testid="snackbar" className={cls([style.snackbar, style[`__${innerStatus}`]])}>
       <span className={style.content}>{message}</span>
-      <BtnIcon onClick={handleClose} data-testid="btn">
-        <Icon name="close" />
+      <BtnIcon onClick={handleClose} data-testid="btn" status="reset">
+        <Icon name="close" fill="var(--white-400)" />
       </BtnIcon>
     </div>
   );
 };
-
-export { Snackbar };

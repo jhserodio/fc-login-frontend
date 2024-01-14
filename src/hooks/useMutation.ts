@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { gqlFetch } from './gql-fetch';
+import { gqlFetch } from '../service/gql-fetch';
 
 export const useMutation = <T>(mutation: string) => {
-  const [data, setData] = useState<T | null>(null);
+  const [resp, setData] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -18,5 +18,5 @@ export const useMutation = <T>(mutation: string) => {
     }
   };
 
-  return { mutate, data, error, loading };
+  return { mutate, resp, error, loading };
 };

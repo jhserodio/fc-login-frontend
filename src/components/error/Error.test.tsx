@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import ErrorBoundary from './Error';
+import { ErrorBoundary } from './Error';
 
 // Componente simulado que lança um erro
 const Bomb = () => {

@@ -1,6 +1,6 @@
 import { renderHook, waitFor } from '@testing-library/react';
 import { useQuery } from './useQuery';
-import * as fetch from './gql-fetch';
+import * as fetch from '../service/gql-fetch';
 
 describe('useGqlFetch', () => {
   const gqlFetch: jest.SpyInstance = jest.spyOn(fetch, 'gqlFetch');

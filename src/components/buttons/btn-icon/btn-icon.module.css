@@ -4,6 +4,13 @@
   height: calc(var(--input-height) + 1px);
   box-sizing: content-box;
   margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover path {
+    transition: all 0.2s ease-in-out;
+    fill: var(--white);
+  }
 }
 
 .__error {
@@ -24,4 +31,10 @@
 
 .__default {
   border-color: var(--primary-light);
+}
+
+
+.__reset {
+  border: 0;
+  background-color: var(--glass);
 }
