@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { t } from 'i18next';
 
 import { BtnSubmit } from '../../components/buttons';
@@ -14,10 +14,14 @@ import { Background } from '../../components/background';
 import { Snackbar } from '../../components/snackbar';
 import useForm from '../../hooks/useForm';
 import { SnackbarStatus } from '../../components/snackbar/Snackbar';
+import { useNavigate } from 'react-router-dom';
+import { putJwtToken } from '../../utils/local-storage';
 
 const LoginComponent = () => {
   const email = useForm('email', true, [isEmail, isRequired]);
   const pass = useForm('pass', false, [isRequired]);
+  const navigate = useNavigate();
+
   const [snackbar, setSnackbar] = useState<{ message: string; status: SnackbarStatus }>({
     message: '',
     status: 'closed',
@@ -25,27 +29,39 @@ const LoginComponent = () => {
 
   const { resp, error, loading, mutate } = useMutation<LoginResponse>(LOGIN_MUTATION);
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const validateInputs = () => {
     email.validate.check();
     pass.validate.check();
+    return email.validate.error || pass.validate.error;
+  };
 
-    if (email.validate.error || pass.validate.error) {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (validateInputs()) {
       setSnackbar({ message: t('validate.invalidSubimit'), status: 'error' });
     } else {
-      console.log('email', email.input.value);
-      await mutate({
-        identifier: email.input.value,
-        password: pass.input.value,
-      });
-
-      if (error) {
-        setSnackbar({ message: error.message, status: 'error' });
-      } else {
-        setSnackbar({ message: resp?.data.login.user.id ?? '', status: 'ok' });
+      try {
+        await mutate({
+          identifier: email.input.value,
+          password: pass.input.value,
+        });
+      } catch (error) {
+        setSnackbar({ message: t('validate.commomRequestError'), status: 'error' });
       }
     }
   };
+
+  useEffect(() => {
+    if (error) {
+      setSnackbar({ message: error.message, status: 'error' });
+    }
+
+    if (resp) {
+      putJwtToken(resp.login.jwt);
+      navigate(`/user/${resp.login.user.id}`);
+    }
+  }, [error, resp, navigate]);
 
   return (
     <Background>

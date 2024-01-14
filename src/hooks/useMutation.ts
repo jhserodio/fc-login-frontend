@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { gqlFetch } from '../service/gql-fetch';
 
 export const useMutation = <T>(mutation: string) => {
-  const [resp, setData] = useState<T | null>(null);
+  const [resp, setResp] = useState<T | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -10,7 +10,8 @@ export const useMutation = <T>(mutation: string) => {
     setLoading(true);
     try {
       const responseData = await gqlFetch<T>(mutation, variables);
-      setData(responseData);
+      setResp(responseData);
+      setError(null);
     } catch (err) {
       setError(err as Error);
     } finally {
