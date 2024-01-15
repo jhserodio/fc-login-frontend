@@ -8,3 +8,14 @@
 .__captalize {
     text-transform: capitalize;
 }
+
+.login {
+  margin-top: 160px;
+}
+
+@media screen and (max-width: 37.49em) {
+	.title {
+    font-size: 1.5em;
+    margin: .5rem auto;
+  }
+}
