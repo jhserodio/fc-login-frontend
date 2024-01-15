@@ -1,5 +1,17 @@
-.input-box {}
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: var(--space-lg) 0;
+}
 
-.label {}
+.label {
+  color: var(--white-800);
+  font-size: var(--body);
+  font-weight: var(--weight-medium);
+  margin: var(--space-sm) 0;
+}
 
-.__error {}
+.__error > .label {
+  color: var(--error-dark);
+}

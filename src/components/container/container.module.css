@@ -1,0 +1,38 @@
+.container {
+	width: var(--container-width);
+	height: auto;
+	display: block;
+	box-sizing: border-box;
+	margin: var(--zero) auto;
+	padding: var(--zero);
+	position: relative;
+  background-color: var(--primary-darkest);
+  background-image: var(--shine);
+  border: 1px solid;
+  border-color: var(--primary);
+  border-radius: var(--radius-lg);
+}
+
+.content {
+  background-color: var(--glass);
+  background-image: var(--gradient-grid-10);
+  background-size: 10px 10px;
+  height: 100%;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 37.49em) {
+	.container {
+		width: var(--container-width-sm);
+	}
+}
+
+@media print {
+	.container {
+		width: 96vw;
+	}
+}

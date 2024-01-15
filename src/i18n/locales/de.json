@@ -1,5 +1,31 @@
 {
+    "title": "Fresh Cells",
     "login": {
-        "email": "Email"
+        "title": "Anmeldung",
+        "subtitle": "Bitte geben Sie Ihre Anmeldedaten ein",
+        "form": {
+            "email": "E-Mail",
+            "password": "Passwort",
+            "submit": "Anmelden"
+        }
+    },
+    "user": {
+        "title": "Benutzerdetails",
+        "subtitle": "Hallo {{firstName}}, hier sind Ihre Kontodetails",
+        "list": {
+            "firstName": "First Name: {{value}}",
+            "lastName": "Last Name: {{value}}",
+            "email": "Email: {{value}}"
+        },
+        "logout": "Abmelden"
+    },
+    "validate": {
+        "required": "Dieses Feld ist erforderlich",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "invalidSubimit": "Bitte überprüfen Sie Ihre Eingabe"
+    },
+    "fallback": {
+        "message": "Beim Laden der Seite ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut: {{error}}",
+        "button": "Zurück zur Anmeldung"
     }
 }

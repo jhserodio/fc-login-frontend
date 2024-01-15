@@ -1,0 +1,27 @@
+.wrap {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  height: var(--input-height);
+}
+
+.input {
+  flex-grow: 1;
+  height: var(--input-height);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--primary-shine);
+  padding: var(--space-mn) var(--space-sm);
+  outline: 0;
+  box-shadow: none;
+  color: var(--black-600);
+}
+
+.__error {
+  color: var(--error-dark);
+  border-color: var(--error);
+}
+
+.__withChildren {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

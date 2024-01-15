@@ -1,0 +1,18 @@
+.login {
+  margin-top: 160px;
+}
+
+.head {
+  max-width: 80%;
+  margin: 0 auto calc(var(--space-lg) * 2);
+  text-align: center;
+  opacity: 0.6;
+}
+
+.content {
+  padding: var(--space-lg);
+}
+
+.btn {
+  margin-top: calc(var(--space-lg)*2);
+}

@@ -1,0 +1,21 @@
+.background {
+  width: 100%;
+  height: 100%;
+	height: auto;
+  min-height: 100vh;
+  background-color: var(--primary-dark);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.content {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  background-color: var(--glass);
+  background-image: var(--gradient-grid-30);
+  height: 100%;
+  background-size: 10px 10px;
+}

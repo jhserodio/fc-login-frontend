@@ -1,17 +1,10 @@
-import { useState, ChangeEvent, useCallback } from 'react';
-import { InputBox } from '../input-box/InputBox';
+import { useState, useCallback } from 'react';
+import { BtnIcon } from '../../buttons';
+import { InputProps } from '../input.model';
+import { Icon } from '../../icons';
+import { Input } from '../input/Input';
 
-import style from './password.module.css';
-import { cls } from '../../../utils/classes';
-
-interface Props {
-  label: string;
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  error?: string;
-}
-
-export const Password = ({ value, onChange, label, error }: Props) => {
+export const Password = (inputProps: InputProps) => {
   const [type, setType] = useState<'password' | 'text'>('password');
 
   const handleChangeType = useCallback(() => {
@@ -22,23 +15,17 @@ export const Password = ({ value, onChange, label, error }: Props) => {
     }
   }, [type]);
 
+  const iconFill = inputProps.error ? `var(--error)` : 'var(--primary-light)';
+
   return (
-    <InputBox label={label} error={error}>
-      <input
-        data-testid="input"
-        type={type}
-        value={value}
-        onChange={onChange}
-        className={cls([style.input, error && style.__error])}
-      />
-      <button
-        data-testid="toggle"
-        type="button"
-        className={style.toggle}
-        onClick={handleChangeType}
-      >
-        {type === 'password' ? 'show' : 'hide'}
-      </button>
-    </InputBox>
+    <Input {...inputProps} type={type}>
+      <BtnIcon onClick={handleChangeType} status={inputProps.error ? 'error' : 'default'}>
+        {type === 'password' ? (
+          <Icon name="show" fill={iconFill} />
+        ) : (
+          <Icon name="hide" fill={iconFill} />
+        )}
+      </BtnIcon>
+    </Input>
   );
 };

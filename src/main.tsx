@@ -15,15 +15,16 @@ import {
 } from 'react-router-dom';
 
 import './theme.css';
-import ErrorBoundary from './components/error/Error.tsx';
+import { ErrorBoundary } from './components/error/boundary/Error.tsx';
 import Login from './pages/login/Login.tsx';
 import User from './pages/user/User.tsx';
+import { sentry_host } from './service/hosts.ts';
 
 use(initReactI18next).init(i18nInitConfig);
 i18n.languages = ['en', 'de'];
 
 Sentry.init({
-  dsn: import.meta.env.SENTRY_DSN,
+  dsn: sentry_host,
   integrations: [
     new Sentry.BrowserTracing({
       tracePropagationTargets: [
@@ -54,7 +55,6 @@ const sentryCreateBrowserRouter = Sentry.wrapCreateBrowserRouter(createBrowserRo
 export const route = sentryCreateBrowserRouter([
   {
     path: '/',
-    errorElement: <ErrorBoundary message="login page not working" />,
     element: (
       <Suspense fallback={<>loading</>}>
         <Login />
@@ -63,7 +63,6 @@ export const route = sentryCreateBrowserRouter([
   },
   {
     path: '/user/:userId',
-    errorElement: <ErrorBoundary message="user page not working" />,
     element: (
       <Suspense fallback={<>loading</>}>
         <User />
@@ -74,6 +73,8 @@ export const route = sentryCreateBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={route} />
+    <ErrorBoundary message="Something not working">
+      <RouterProvider router={route} />
+    </ErrorBoundary>
   </React.StrictMode>,
 );

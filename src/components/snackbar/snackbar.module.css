@@ -1,13 +1,42 @@
-.snackbar {}
+.snackbar {
+  --width: 60vw;
+  --left: 20vw;
 
-.content {}
 
-.__warn {}
+  position: fixed;
+  width: var(--width);
+  left: var(--left);
+  bottom: 5vh;
+  background: var(--black-400);
+  padding: var(--space);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--radius-md);
+  transition: margin-bottom 0.2s ease-in-out;
+}
 
-.__error {}
+.content {
+  color: var(--white-800);
+  padding-left: var(--space);
+}
 
-.__info {}
+.__warn {
+  background-color: var(--warn-dark);
+}
 
-.__ok {}
+.__error {
+  background-color: var(--error-dark);
+}
 
-.__closed {}
+.__info {
+  background-color: var(--info-dark);
+}
+
+.__ok {
+  background-color: var(--ok-dark);
+}
+
+.__closed {
+  margin-bottom: -100vh;
+}

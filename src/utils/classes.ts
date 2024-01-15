@@ -5,7 +5,7 @@ const isClass = (str: Optional<string>): boolean => {
     return false;
   }
 
-  return /^\.[-_a-zA-Z0-9]+$/.test(str);
+  return /^[-_a-zA-Z0-9]+$/.test(str);
 };
 
 export const cls = (arr: Array<Optional<string>>): string => {

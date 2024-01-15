@@ -1,5 +1,31 @@
 {
+    "title": "Fresh Cells",
     "login": {
-        "email": "E-mail"
+        "title": "Login",
+        "subtitle": "Please enter your credentials",
+        "form": {
+            "email": "Email",
+            "password": "Password",
+            "submit": "Login"
+        }
+    },
+    "user": {
+        "title": "User Details",
+        "subtitle": "Hi {{firstName}} here are your account details",
+        "list": {
+            "firstName": "First Name: {{value}}",
+            "lastName": "Last Name: {{value}}",
+            "email": "Email: {{value}}"
+        },
+        "logout": "Logout"
+    },
+    "validate": {
+        "required": "This field is required",
+        "email": "Please enter a valid email address",
+        "invalidSubimit": "Please correct the errors before submitting the form"
+    },
+    "fallback": {
+        "message": "An error occurred while loading the page, please try again later: {{error}}",
+        "button": "Go back to login"
     }
 }

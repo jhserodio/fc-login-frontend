@@ -1,10 +1,18 @@
 /* hint.module.css */
 .hint {
-  padding: 10px;
+  padding: var(--space) var(--space-sm);
+  font-size: var(--caption);
+
+  &::before {
+    content: ' × ';
+    color: var(--error);
+    margin-bottom: -1px;
+    font-weight: bold;
+  }
 }
 
 .error {
-color: var(--error);
+  color: var(--error);
 }
 
 .success {

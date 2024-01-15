@@ -1,0 +1,42 @@
+.btn {
+  width: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(var(--input-height) + var(--space));
+  border: 2px solid var(--primary-lightest);
+  box-sizing: border-box;
+  background: var(--white-600);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding-top: 0.3rem;
+
+  &:hover, &:focus {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--primary-dark);
+  }
+}
+
+.load {
+  transform: scale(0.7);
+
+  & svg {
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}

@@ -1,1 +1,10 @@
-.title {}
+.title {
+    font-weight: 700;
+    margin: 1rem auto;
+    text-align: center;
+    color: var(--primary-shine);
+}
+
+.__captalize {
+    text-transform: capitalize;
+}

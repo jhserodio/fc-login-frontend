@@ -1,5 +1,9 @@
 import { render, screen } from '@testing-library/react';
-import ErrorBoundary from './Error';
+import { ErrorBoundary } from './Error';
+
+jest.mock('../fallback/Fallback', () => ({
+  Fallback: ({ message }: { message: string }) => <div>{message}</div>,
+}));
 
 // Componente simulado que lança um erro
 const Bomb = () => {

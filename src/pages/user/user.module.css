@@ -1,0 +1,25 @@
+.user {
+  padding: calc(var(--space-lg) * 3) 0;
+}
+
+.head {
+  padding: var(--space-lg) var(--space-lg) 0;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg) var(--space-lg);
+}
+
+.item {
+  display: flex;
+  text-align: left;
+}
+
+.bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: var(--space-lg) var(--space-lg);
+}

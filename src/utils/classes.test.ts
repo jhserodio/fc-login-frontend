@@ -3,9 +3,9 @@ import { Optional } from '../types/utils';
 
 describe('cls', () => {
   it('deve retornar uma string concatenada de elementos do tipo string', () => {
-    const input: Array<Optional<string>> = ['.a', '.b', null, 'c', undefined, '.d'];
+    const input: Array<Optional<string>> = ['a', 'b', null, 'c', undefined, 'd'];
     const output: string = cls(input);
-    expect(output).toBe('.a .b .d');
+    expect(output).toBe('a b c d');
   });
 
   it('deve retornar uma string vazia se a entrada for um array vazio', () => {

@@ -1,1 +1,40 @@
-.btn {}
+.btn {
+  background-color: var(--primary-darkest);
+  border: 1px solid var(--primary-light);
+  height: calc(var(--input-height) + 1px);
+  box-sizing: content-box;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover path {
+    transition: all 0.2s ease-in-out;
+    fill: var(--white);
+  }
+}
+
+.__error {
+  border-color: var(--error);
+}
+
+.__ok {
+  border-color: var(--ok);
+}
+
+.__info {
+  border-color: var(--info);
+}
+
+.__warn {
+  border-color: var(--warn);
+}
+
+.__default {
+  border-color: var(--primary-light);
+}
+
+
+.__reset {
+  border: 0;
+  background-color: var(--glass);
+}

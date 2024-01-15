@@ -8,7 +8,7 @@ type BtnProps = {
 
 export const Btn: React.FC<BtnProps> = ({ children, onClick }) => {
   return (
-    <button className={styles.btnIcon} onClick={onClick}>
+    <button className={styles.btn} onClick={onClick}>
       {children}
     </button>
   );
