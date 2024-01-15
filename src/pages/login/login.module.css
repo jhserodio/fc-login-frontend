@@ -1,5 +1,5 @@
 .login {
-  margin-top: 160px;
+  margin-top: 10rem;
 }
 
 .head {
@@ -15,4 +15,13 @@
 
 .btn {
   margin-top: calc(var(--space-lg)*2);
+}
+
+@media screen and (max-width: 37.49em) {
+	.login {
+    margin-top: 2rem;
+    max-height: 100vh;
+    height: var(100vh + 2rem);
+    overflow-y: hidden;
+  }
 }
