@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import useForm from './useForm';
+import { useForm } from './useForm';
 import { ChangeEvent, FocusEvent } from 'react';
 
 describe('useForm', () => {

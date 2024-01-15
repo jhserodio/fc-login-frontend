@@ -4,22 +4,23 @@ import { t } from 'i18next';
 import { BtnSubmit } from '../../components/buttons';
 import { Container } from '../../components/container';
 import { Form, Field, Password } from '../../components/forms';
+import { Title } from '../../components/texts';
+import { Background } from '../../components/background';
+import { SnackbarStatus } from '../../components/snackbar/Snackbar';
+import { Snackbar } from '../../components/snackbar';
 import { LOGIN_MUTATION } from '../../service/gql/login.mutation';
 import { LoginResponse } from '../../service/interfaces/login.model';
 import { useMutation } from '../../hooks/useMutation';
 import style from './login.module.css';
 import { isEmail, isRequired } from '../../utils/validate';
-import { Title } from '../../components/texts';
-import { Background } from '../../components/background';
-import { Snackbar } from '../../components/snackbar';
-import useForm from '../../hooks/useForm';
-import { SnackbarStatus } from '../../components/snackbar/Snackbar';
+import { useForm } from '../../hooks/useForm';
 import { useNavigate } from 'react-router-dom';
 import { putJwtToken } from '../../utils/local-storage';
 
 const LoginComponent = () => {
   const email = useForm('email', true, [isEmail, isRequired]);
-  const pass = useForm('pass', false, [isRequired]);
+  const pass = useForm('pass', true, [isRequired]);
+
   const navigate = useNavigate();
 
   const [snackbar, setSnackbar] = useState<{ message: string; status: SnackbarStatus }>({

@@ -20,7 +20,7 @@ type UseFormOutput = {
   validate: Validate;
 };
 
-const useForm = (
+export const useForm = (
   name: string,
   required: boolean,
   validates: ValidationFunction[],
@@ -63,5 +63,3 @@ const useForm = (
     },
   };
 };
-
-export default useForm;

@@ -1,9 +1,6 @@
 import { Component, ReactNode } from 'react';
 import * as Sentry from '@sentry/react';
-
-function FallbackComponent({ message }: { message: string }) {
-  return <div>An error has occurred: {message}</div>;
-}
+import { FallbackComponent } from './FallbackComponent';
 
 interface Props {
   children?: ReactNode;
