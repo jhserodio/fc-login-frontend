@@ -1,4 +1,3 @@
-// src/component/hint/Hint.tsx
 import React from 'react';
 import style from './hint.module.css';
 import { cls } from '../../../utils/classes';

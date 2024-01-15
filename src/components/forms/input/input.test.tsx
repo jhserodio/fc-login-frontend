@@ -72,7 +72,7 @@ describe('Input', () => {
     expect(clsSpy).toHaveBeenCalledWith(['input', '__error', undefined]);
   });
 
-  it('should apply error style when children prop is provided', () => {
+  it('should apply style when children prop is provided', () => {
     render(
       <Input type="text" name="default" label="Input" value="" onChange={mockOnChange}>
         {<span />}
