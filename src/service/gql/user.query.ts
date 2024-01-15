@@ -1,5 +1,5 @@
 const GET_USER_QUERY = `
-  query user($id: Int!) {
+  query user($id: ID!) {
     user(id: $id) {
       email
       firstName

@@ -1,1 +1,4 @@
-.paragraph {}
+.paragraph {
+  color: var(--white-800);
+  margin: var(--space-sm) 0;
+}

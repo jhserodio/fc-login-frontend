@@ -3,7 +3,7 @@ import { gql_host } from './hosts';
 export async function gqlFetch<T>(
   query: string,
   variables: Record<string, unknown>,
-  headers?: Headers,
+  headers?: Record<string, string>,
 ): Promise<T> {
   const response = await fetch(gql_host, {
     method: 'POST',

@@ -1,6 +1,19 @@
 .btn {
-  width: 100%;
-  flex-grow: 1;
+  width: auto;
   height: var(--input-height);
-  background: blue;
+  border: 2px solid var(--primary-lightest);
+  box-sizing: border-box;
+  background: var(--white-600);
+  border-radius: var(--radius-sm);
+  color: var(--primary);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover, &:focus {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--primary-dark);
+  }
 }
