@@ -1,5 +1,5 @@
 import { render, fireEvent } from '@testing-library/react';
-import { Form } from './Form'; // Ajuste o caminho de importação conforme necessário
+import { Form } from './Form';
 
 test('should call submit event', () => {
   const handleSubmit = jest.fn();
