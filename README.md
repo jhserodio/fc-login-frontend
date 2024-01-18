@@ -1,5 +1,5 @@
 # FreshCells Frontend Login
-A project with an implementation for testing my skills to work to an Amazing Germany Company <3
+A project with an implementation without dependencies to create a SPA login page <3
 
 # Dependencies
 - React: my favorite Framework (someone says "its a library", No its a framework in my hands)
